@@ -1,0 +1,79 @@
+:root {
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #4ecdc4;
+    --primary-background-color: #353535;
+    --padding-leftright: 2em;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+}
+
+.control {
+    height: 10%;
+    padding: 0 var(--padding-leftright);
+    background-color: var(--primary-background-color);
+
+    display: flex;
+    align-items: center;
+}
+
+.control a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 0 .4em;
+}
+
+.control a:last-of-type {
+    margin-left: auto;
+}
+
+.display {
+    height: 80%;
+    color: var(--primary-text-color);
+    background-color: var(--primary-background-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display .main-display {
+    padding: 0 var(--padding-leftright);
+    
+    display: flex;
+    justify-content: center;
+}
+
+.main-quote {
+    font-size: 3.2em;
+    text-align: center;
+    margin: 0 .5em;
+}
+
+.main-quote + svg {
+    margin-top: auto;
+}
+
+footer {
+    height: 10%;
+    background-color: var(--primary-background-color);
+    padding: 0 var(--padding-leftright);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.said-by {
+    color: var(--primary-text-color);
+    font-size: 1.5em;
+    text-align: right;
+}
