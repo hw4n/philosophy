@@ -1,4 +1,5 @@
 import request from 'supertest';
+import mongoose from 'mongoose';
 import server from '../index';
 
 describe('Express Routes Test', () => {
@@ -23,4 +24,5 @@ describe('Express Routes Test', () => {
 
 afterAll(async () => {
   server.close();
+  await mongoose.disconnect();
 });
