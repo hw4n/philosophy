@@ -10,6 +10,7 @@ describe('Express Routes Test', () => {
   test('GET /quote request', async () => {
     const response = await request(server).get('/api/quote');
     expect(response.status).toBe(200);
+    expect(response.body.quotes.length).toBeGreaterThanOrEqual(0);
   });
 
   test('POST /quote request', async () => {
@@ -20,7 +21,7 @@ describe('Express Routes Test', () => {
       .post('/api/quote')
       .send({ text, saidBy });
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(201);
     expect(response.body.text).toBe(text);
     expect(response.body.saidBy).toBe(saidBy);
     expect(response.body.approved).toBe(false);

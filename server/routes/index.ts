@@ -3,9 +3,12 @@ import quoteModel from '../models/Quote';
 
 const router = Router();
 
-router.get('/quote', (req, res) => {
+router.get('/quote', async (req, res) => {
+  const quotes = await quoteModel.find();
+
   res.status(200).json({
     message: 'GET quote',
+    quotes,
   });
 });
 
