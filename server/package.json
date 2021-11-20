@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc-watch --onSuccess \"node dist/index.js\"",
-    "test": "jest --setupFiles dotenv/config --forceExit --detectOpenHandles"
+    "test": "jest --setupFiles dotenv/config"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
