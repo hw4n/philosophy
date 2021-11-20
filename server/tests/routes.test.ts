@@ -9,16 +9,18 @@ describe('Express Routes Test', () => {
   });
 
   test('POST /quote request', async () => {
-    const quote = 'A perfect circle?';
+    const text = 'A perfect circle?';
     const saidBy = 'Squidward';
 
     const response = await request(server)
       .post('/api/quote')
-      .send({ quote, saidBy });
+      .send({ text, saidBy });
 
     expect(response.status).toBe(200);
-    expect(response.body.quote).toBe(quote);
+    expect(response.body.text).toBe(text);
     expect(response.body.saidBy).toBe(saidBy);
+    expect(response.body.approved).toBe(false);
+    expect(response.body.createdAt).toBeTruthy();
   });
 });
 

@@ -14,6 +14,10 @@ const quoteSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  approved: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 export default mongoose.model<IQuoteModel>('Quote', quoteSchema);

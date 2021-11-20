@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import quoteModel from '../models/Quote';
 
 const router = Router();
 
@@ -14,14 +15,12 @@ router.get('/quote/:id', (req, res) => {
   });
 });
 
-router.post('/quote', (req, res) => {
-  const { quote, saidBy } = req.body;
+router.post('/quote', async (req, res) => {
+  const { text, saidBy } = req.body;
 
-  res.status(200).json({
-    message: 'POST quote',
-    quote,
-    saidBy,
-  });
+  const newQuote = await quoteModel.create({ text, saidBy });
+
+  res.status(200).json(newQuote);
 });
 
 export default router;

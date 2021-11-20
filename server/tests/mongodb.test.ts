@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import quote from '../models';
+import quote from '../models/Quote';
 
 describe('MongoDB Functioanlity Test', () => {
   beforeAll(async () => {
