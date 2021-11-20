@@ -52,6 +52,22 @@ body {
     justify-content: center;
 }
 
+.display form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.display form input {
+    height: 3em;
+    padding: .5em;
+    font-size: 1.2em;
+}
+
+.display form button {
+    font-size: 1.2em;
+}
+
 .main-quote {
     font-size: 3.2em;
     text-align: center;
