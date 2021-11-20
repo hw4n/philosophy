@@ -1,38 +1,116 @@
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #4ecdc4;
+  --primary-background-color: #353535;
+  --padding-leftright: 2em;
+}
+
 .App {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.control {
+  height: 10%;
+  padding: 0 var(--padding-leftright);
+  background-color: var(--primary-background-color);
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.control * {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  text-transform: capitalize;
+  margin: 0 .4em;
+  cursor: pointer;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.display {
+  height: 80%;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.display .main-display {
+  padding: 0 var(--padding-leftright);
+  
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.display form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.display form input {
+  height: 3em;
+  padding: .5em;
+  font-size: 1.2em;
+}
+
+.display form button {
+  font-size: 1.2em;
+}
+
+.main-quote {
+  font-size: 3.2em;
+  text-align: center;
+  margin: 0 .5em;
+}
+
+.main-quote + svg {
+  margin-top: auto;
+}
+
+footer {
+  height: 10%;
+  background-color: var(--primary-background-color);
+  padding: 0 var(--padding-leftright);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.said-by {
+  color: var(--primary-text-color);
+  font-size: 1.5em;
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-display {
+      font-size: 1.5vw;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .main-quote {
+      font-size: 4.5vw;
+  }
+}
+
+@media only screen and (min-width: 889px) {
+  .main-quote {
+      font-size: 4vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main-quote {
+      font-size: 4vw;
   }
 }
