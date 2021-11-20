@@ -32,7 +32,7 @@ router.post('/quote', async (req, res) => {
 
   const newQuote = await quoteModel.create({ text, saidBy });
 
-  res.status(200).json(newQuote);
+  res.status(201).json(newQuote);
 });
 
 export default router;
