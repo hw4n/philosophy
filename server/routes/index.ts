@@ -9,9 +9,21 @@ router.get('/quote', (req, res) => {
   });
 });
 
-router.get('/quote/:id', (req, res) => {
-  res.status(200).json({
+router.get('/quote/:id', async (req, res) => {
+  const quote = await quoteModel.findById(req.params.id);
+
+  if (!quote) {
+    return res.status(404).json({
+      message: 'Quote not found',
+    });
+  }
+
+  const { text, saidBy } = quote;
+
+  return res.status(200).json({
     message: 'GET quote by id',
+    text,
+    saidBy,
   });
 });
 
