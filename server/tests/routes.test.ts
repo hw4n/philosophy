@@ -36,6 +36,14 @@ describe('Express Routes Test', () => {
     expect(response.body.text).toBe(newQuote.text);
     expect(response.body.saidBy).toBe(newQuote.saidBy);
   });
+
+  test('GET /random/quote request', async () => {
+    const response = await request(server).get('/api/random/quote');
+
+    expect(response.status).toBe(200);
+    expect(response.body.text).toBeTruthy();
+    expect(response.body.saidBy).toBeTruthy();
+  });
 });
 
 afterAll(async () => {

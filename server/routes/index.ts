@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import quoteModel from '../models/Quote';
+import randomRouter from './random';
 
 const router = Router();
 
@@ -37,5 +38,7 @@ router.post('/quote', async (req, res) => {
 
   res.status(201).json(newQuote);
 });
+
+router.use('/random', randomRouter);
 
 export default router;
