@@ -8,11 +8,7 @@ function App() {
   return (
     <div className="App container">
       <Header />
-      <Routes>
-        <Route path="/" element={<Display />} />
-        <Route path="/quote/:id" />
-      </Routes>
-      <Footer />
+      <Display />
     </div>
   );
 }

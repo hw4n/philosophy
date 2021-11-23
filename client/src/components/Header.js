@@ -6,6 +6,7 @@ function Header() {
     <header class="control">
       <span>[copy permalink]</span>
       <Link to="/create">[create philosophy]</Link>
+      <Link to="/15615615156">[create philosophy]</Link>
       <span className="ml-auto">[lightmode]</span>
     </header>
   )
