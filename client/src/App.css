@@ -49,22 +49,6 @@
   justify-content: center;
 }
 
-.display form {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-}
-
-.display form input {
-  height: 3em;
-  padding: .5em;
-  font-size: 1.2em;
-}
-
-.display form button {
-  font-size: 1.2em;
-}
-
 .main-quote {
   font-size: 3.2em;
   text-align: center;
@@ -89,6 +73,33 @@ footer {
   color: var(--primary-text-color);
   font-size: 1.5em;
   text-align: right;
+}
+
+.after-header {
+  background-color: var(--primary-background-color);
+  height: 90%;
+  color: var(--primary-text-color);
+  display: flex;;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrap {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formWrap label,
+.formWrap input,
+.formWrap button {
+  font-size: 1.2em;
+}
+
+.formWrap input {
+  height: 2em;
+  padding: .4em;
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 600px) {
