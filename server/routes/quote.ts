@@ -31,7 +31,13 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { text, saidBy } = req.body;
+  const { text, saidBy = 'Anonymous' } = req.body;
+
+  if (!text) {
+    return res.status(400).json({
+      message: 'Quote text is required',
+    });
+  }
 
   const newQuote = await quoteModel.create({ text, saidBy });
 

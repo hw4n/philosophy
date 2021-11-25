@@ -29,6 +29,21 @@ describe('Express Routes Test', () => {
     newQuote = response.body;
   });
 
+  test('POST /quote with empty body', async () => {
+    const response = await request(server).post('/api/quote');
+    expect(response.status).toBe(400);
+  });
+
+  test('POST /quote with empty saidBy', async () => {
+    const text = 'party all day I know you\'ve been waiting';
+    const response = await request(server)
+      .post('/api/quote')
+      .send({ text });
+    expect(response.status).toBe(201);
+    expect(response.body.text).toBe(text);
+    expect(response.body.saidBy).toBe('Anonymous');
+  });
+
   test('GET /quote/:id request', async () => {
     const response = await request(server).get(`/api/quote/${newQuote._id}`);
 
